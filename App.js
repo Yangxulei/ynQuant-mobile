@@ -1,13 +1,12 @@
 import React from 'react'
-import {YellowBox} from 'react-native'
 import Index from './pages/Layout/Index'
 
-YellowBox.ignoreWarnings([
-  'Warning: componentWillMount is deprecated',
-  'Warning: componentWillReceiveProps is deprecated'
-])
+console.disableYellowBox = true
+/**
+ * TODO: 配置具体的关闭提醒
+ */
 
-export default class App<Props> extends React.Component {
+export default class App extends React.Component {
   render () {
     return (
       <Index />
