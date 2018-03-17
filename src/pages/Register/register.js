@@ -1,6 +1,14 @@
 import React from 'react'
-import {Image, StyleSheet, Text, TextInput, TouchableOpacity, View} from 'react-native'
-import {connect} from 'react-redux'
+import {
+  Image,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+  SegmentedControlIOS
+} from 'react-native'
+import { connect } from 'react-redux'
 // import { loginAction } from './loginActions'
 
 /**
@@ -69,7 +77,32 @@ class RegisterScreen extends React.Component {
               maxLength={20}
             />
           </View>
-          <View style={styles.selectType}/>
+          <View style={styles.selectType}>
+            <View style={styles.selectItem}>
+              <View style={styles.selectActiveText}>
+                <Text style={styles.type}>金融新手</Text>
+              </View>
+            </View>
+            <View style={styles.selecItem}>
+              <View style={styles.selectText}>
+                <Text style={styles.type}>略有了解</Text>
+              </View>
+            </View>
+            <View style={styles.selectItem}>
+              <View style={styles.selectText}>
+                <Text style={styles.type}>从业人员</Text>
+              </View>
+              {/* <SegmentedControlIOS
+                values={['金融新手', '略有了解','从业人员']}
+                selectedIndex={this.state.selectedIndex}
+                onChange={event => {
+                  this.setState({
+                    selectedIndex: event.nativeEvent.selectedSegmentIndex
+                  })
+                }}
+              /> */}
+            </View>
+          </View>
 
           <TouchableOpacity
             style={styles.registerButton}
@@ -89,7 +122,7 @@ class RegisterScreen extends React.Component {
               // onPress={() => navigate('HomeScreen')}
               underlayColor='#fff'
             >
-              <Text style={{fontSize: 14}}>登录.</Text>
+              <Text style={{ fontSize: 14 }}>登录.</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -161,13 +194,34 @@ const styles = StyleSheet.create({
   remindText: {
     color: '#777777'
   },
-
   selectType: {
     flexDirection: 'row',
-    backgroundColor: 'gray',
+    justifyContent: 'center',
+    alignItems: 'center',
     height: 50,
-    width: 244,
-    marginTop: 10.5
+    marginTop: 5
+    // borderTopWidth: 3
+  },
+  selecItem: {
+    // paddingBottom: 3
+  },
+  selectActiveText: {
+    borderColor: 'blue',
+    paddingRight: 7,
+    borderTopWidth: 5,
+    borderRadius: 5
+  },
+  selectText: {
+    borderTopWidth: 5,
+    borderColor: '#BDBDBD',
+    paddingRight: 7,
+    borderRadius: 5
+  },
+  type: {
+    fontSize: 15,
+    color: 'gray',
+    padding: 8,
+    marginTop: 3
   }
 })
 
