@@ -79,19 +79,16 @@ class RegisterScreen extends React.Component {
           </View>
           <View style={styles.selectType}>
             <View style={styles.selectItem}>
-              <View style={styles.selectActiveText}>
-                <Text style={styles.type}>金融新手</Text>
-              </View>
+              <View style={styles.selectActiveText} />
+              <Text style={styles.type}>金融新手</Text>
             </View>
             <View style={styles.selecItem}>
-              <View style={styles.selectText}>
-                <Text style={styles.type}>略有了解</Text>
-              </View>
+              <View style={styles.selectText} />
+              <Text style={styles.type}>略有了解</Text>
             </View>
             <View style={styles.selectItem}>
-              <View style={styles.selectText}>
-                <Text style={styles.type}>从业人员</Text>
-              </View>
+              <View style={styles.selectText} />
+              <Text style={styles.type}>从业人员</Text>
               {/* <SegmentedControlIOS
                 values={['金融新手', '略有了解','从业人员']}
                 selectedIndex={this.state.selectedIndex}
@@ -209,13 +206,15 @@ const styles = StyleSheet.create({
     borderColor: 'blue',
     paddingRight: 7,
     borderTopWidth: 5,
-    borderRadius: 5
+    borderRadius: 5,
+    marginRight: 5
   },
   selectText: {
     borderTopWidth: 5,
     borderColor: '#BDBDBD',
     paddingRight: 7,
-    borderRadius: 5
+    borderRadius: 5,
+    marginRight: 5
   },
   type: {
     fontSize: 15,
